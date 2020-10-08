@@ -1,0 +1,16 @@
+{
+    "name": "pf2e-lockpicking",
+    "title": "PF2e Lockpicking",
+    "description": "Module to help facilitate lockpicking in PF2e",
+    "author": "drexl93",
+    "version": "1.0.0",
+    "minimumCoreVersion": "0.6.0",
+    "compatibleCoreVersion": "0.6.6",
+    "scripts": [
+        "scripts/init.js"
+    ],
+    "socket": true,
+    "url": "https://github.com/drexl93/pf2e-lockpicking",
+    "manifest": "",
+    "download": ""
+}
