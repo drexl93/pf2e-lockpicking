@@ -3,7 +3,7 @@
     "title": "PF2e Lockpicking",
     "description": "Module to help facilitate lockpicking in PF2e",
     "author": "drexl93",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "minimumCoreVersion": "0.6.0",
     "compatibleCoreVersion": "0.6.6",
     "esmodules": [

@@ -4,7 +4,11 @@
     width: 95%;
 }
 
-.pf2e-lockpicking-textinput {
+#customDC {
+    width: 30px
+}
+
+#successes {
     width: 30px
 }
 

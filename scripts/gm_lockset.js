@@ -1,6 +1,11 @@
 // Macro for the GM to run to set the DC and number of successes for the lock
 // Can pick from the set of published locks or create a custom one
 
+if (!token) {
+  ui.notifications.error("Please select a token.")
+  return;
+}
+
 let locks = {
   poor: {DC: 15, successes: 2},
   simple: {DC: 20, successes: 3},
@@ -23,10 +28,10 @@ content += `<p><label for="preset">Pick a preset: </label>
 </select>`
 
 content2 += `<form id="pf2e-lockpicking-gm_lockset-content2"><p><label for="customDC">DC: </label>
-<input class="pf2e-lockpicking-textinput" type="text" id="customDC" name="customDC"></p>
+<input type="text" id="customDC" name="customDC"></p>
 
 <p><label for="successes">Required Successes: </label>
-<input class="pf2e-lockpicking-textinput" type="text" id="successes" name="successes"></p></form>`
+<input type="text" id="successes" name="successes"></p></form>`
 
 let dialog = new Dialog({
   title: "Lockpicking",
@@ -51,10 +56,6 @@ let dialog = new Dialog({
           }
       }
     },
-    cancel: {
-      icon: "<i class='fas fa-times'></i>",
-      label: "Cancel",
-    },
   }
 })
 dialog.options.width = 125
@@ -78,10 +79,6 @@ let customLock = new Dialog({
               DC
           });
       }
-    },
-    cancel: {
-      icon: "<i class='fas fa-times'></i>",
-      label: "Cancel",
     },
   }
 })
