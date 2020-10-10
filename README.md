@@ -1,6 +1,9 @@
 # PF2e Lockpicking
 This is a simple little module that supports the automation of Pathfinder 2e's "multiple successes" rules on lockpicking.
 
+## Installation:
+Copy the following link into your Manifest URL bar in the Module Installation window of Foundry VTT: https://raw.githubusercontent.com/drexl93/pf2e-lockpicking/master/module.json
+
 ## Usage:
 1. GM selects the token of the actor attempting the lockpicking.
 2. GM uses the supplied macro (in the PF2e Lockpicking Compendium) to choose a type of lock.
