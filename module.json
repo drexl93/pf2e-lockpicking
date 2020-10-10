@@ -22,6 +22,6 @@
     ],
     "socket": true,
     "url": "https://github.com/drexl93/pf2e-lockpicking",
-    "manifest": "",
-    "download": ""
+    "manifest": "https://raw.githubusercontent.com/drexl93/pf2e-lockpicking/master/module.json",
+    "download": "https://github.com/drexl93/pf2e-lockpicking/raw/master/pf2e-lockpicking.zip"
 }
