@@ -30,13 +30,13 @@ export function lockpick(targetSuccesses, targetDC, actor) {
         while (successes < targetSuccesses) {
             attempts++
             let rollRes = new Roll("1d20 + @thi + @mod", {thi: actor.data.skills.thi.totalModifier, mod: bonuses} ).roll()
-            console.log(rollRes);
+            let resultString = rollRes._result.replaceAll(/ /g, '')
             if (rollRes._total >= targetDC + 10) {
                 successes = successes + 2
                 rollResArr.push(` 
                 <div class="pf2e-lockpicking-tooltip">
                     <span class="pf2e-lockpicking-scripts-numbercritsuccess">${rollRes._total}
-                        <span class="pf2e-lockpicking-tooltiptext">${rollRes._result}
+                        <span class="pf2e-lockpicking-tooltiptext" style="border-color: green">${resultString}
                         </span>
                     </span>
                 </div>`)
@@ -45,7 +45,7 @@ export function lockpick(targetSuccesses, targetDC, actor) {
                 rollResArr.push(` 
                 <div class="pf2e-lockpicking-tooltip">
                     <span class="pf2e-lockpicking-scripts-numbersuccess">${rollRes._total}
-                        <span class="pf2e-lockpicking-tooltiptext">${rollRes._result}
+                        <span class="pf2e-lockpicking-tooltiptext" style="border-color: green">${resultString}
                         </span>
                     </span>
                 </div>`)
@@ -56,7 +56,7 @@ export function lockpick(targetSuccesses, targetDC, actor) {
                 rollResArr.push(`
                 <div class="pf2e-lockpicking-tooltip">
                     <span class="pf2e-lockpicking-scripts-numbercritfail">${rollRes._total}
-                        <span class="pf2e-lockpicking-tooltiptext">${rollRes._result}
+                        <span class="pf2e-lockpicking-tooltiptext" style="border-color: red">${resultString}
                         </span>
                     </span>
                 </div>`)
@@ -65,7 +65,7 @@ export function lockpick(targetSuccesses, targetDC, actor) {
                 rollResArr.push(` 
                 <div class="pf2e-lockpicking-tooltip">
                     ${rollRes._total}
-                    <span class="pf2e-lockpicking-tooltiptext">${rollRes._result}
+                    <span class="pf2e-lockpicking-tooltiptext" style="border-color: black">${resultString}
                     </span>
                 </div>`
                 )
@@ -82,6 +82,7 @@ export function lockpick(targetSuccesses, targetDC, actor) {
     async function normalMode(targetSuccesses, targetDC, actor, bonuses) {
         attempts++
         let rollRes = new Roll("1d20 + @thi + @mod", {thi: actor.data.skills.thi.totalModifier, mod: bonuses} ).roll()
+        let resultString = rollRes._result.replaceAll(/ /g, '')
         if (rollRes._total >= targetDC) {
             successes++
             if (rollRes._total >= targetDC + 10) {
@@ -90,7 +91,7 @@ export function lockpick(targetSuccesses, targetDC, actor) {
                 results += ` Your result was
                 <div class="pf2e-lockpicking-tooltip">
                     <span class="pf2e-lockpicking-scripts-numbercritsuccess">${rollRes._total}.
-                        <span class="pf2e-lockpicking-tooltiptext">${rollRes._result}
+                        <span class="pf2e-lockpicking-tooltiptext" style="border-color: green">${resultString}
                         </span>
                     </span>
                 </div>`
@@ -99,7 +100,7 @@ export function lockpick(targetSuccesses, targetDC, actor) {
                 results += ` Your result was
                 <div class="pf2e-lockpicking-tooltip">
                     <span class="pf2e-lockpicking-scripts-numbersuccess">${rollRes._total}.
-                        <span class="pf2e-lockpicking-tooltiptext">${rollRes._result}
+                        <span class="pf2e-lockpicking-tooltiptext" style="border-color: green">${resultString}
                         </span>
                     </span>
                 </div>`
@@ -109,7 +110,7 @@ export function lockpick(targetSuccesses, targetDC, actor) {
             results += ` Your result was
             <div class="pf2e-lockpicking-tooltip">
                 ${rollRes._total}.
-                <span class="pf2e-lockpicking-tooltiptext">${rollRes._result}
+                <span class="pf2e-lockpicking-tooltiptext" style="border-color: black">${resultString}
                 </span>
             </div>`
         } else {
@@ -117,7 +118,7 @@ export function lockpick(targetSuccesses, targetDC, actor) {
             results += ` Your result was
             <div class="pf2e-lockpicking-tooltip">
                 <span class="pf2e-lockpicking-scripts-numbercritfail">${rollRes._total}.
-                    <span class="pf2e-lockpicking-tooltiptext">${rollRes._result}
+                    <span class="pf2e-lockpicking-tooltiptext" style="border-color: red">${resultString}
                     </span>
                 </span>
             </div>`
