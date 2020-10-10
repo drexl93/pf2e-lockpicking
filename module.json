@@ -6,8 +6,19 @@
     "version": "1.0.0",
     "minimumCoreVersion": "0.6.0",
     "compatibleCoreVersion": "0.6.6",
-    "scripts": [
-        "scripts/init.js"
+    "esmodules": [
+        "scripts/init.js",
+        "scripts/scripts.js"
+    ],
+    "styles": [ "./pf2e-lockpicking.css" ],
+    "packs": [
+	{
+            "name": "pf2e-lockpicking",
+            "label": "PF2e Lockpicking",
+            "path": "packs/pf2e-lockpicking.db",
+            "module": "pf2e-lockpicking",
+            "entity": "Macro"
+        }
     ],
     "socket": true,
     "url": "https://github.com/drexl93/pf2e-lockpicking",
