@@ -30,7 +30,10 @@ export function lockpick(targetSuccesses, targetDC, actor) {
         while (successes < targetSuccesses) {
             attempts++
             let rollRes = new Roll("1d20 + @thi + @mod", {thi: actor.data.skills.thi.totalModifier, mod: bonuses} ).roll()
-            let resultString = rollRes._result.replaceAll(/ /g, '')
+            let resultString = "";
+            for (let i=0; i<rollRes.results.length ; i++) {
+                resultString += `${rollRes.results[i]}`
+            }
             if (rollRes._total >= targetDC + 10) {
                 successes = successes + 2
                 rollResArr.push(` 
@@ -82,7 +85,10 @@ export function lockpick(targetSuccesses, targetDC, actor) {
     async function normalMode(targetSuccesses, targetDC, actor, bonuses) {
         attempts++
         let rollRes = new Roll("1d20 + @thi + @mod", {thi: actor.data.skills.thi.totalModifier, mod: bonuses} ).roll()
-        let resultString = rollRes._result.replaceAll(/ /g, '')
+        let resultString = "";
+        for (let i=0; i<rollRes.results.length ; i++) {
+            resultString += `${rollRes.results[i]}`
+        }
         if (rollRes._total >= targetDC) {
             successes++
             if (rollRes._total >= targetDC + 10) {
