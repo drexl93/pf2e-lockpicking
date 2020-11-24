@@ -23,6 +23,6 @@ Player side:
 
 
 ## Endnotes:
-Let me know if you have any feedback about this module/if you run into any bugs!
+Let me know if you have any feedback about this module/if you run into any bugs! The best way to get in touch with me is via Discord (Some Knucklehead#4725).
 
 As always, I'm eternally grateful to the folks at the Discord channel for Foundry VTT for helping me learn my way around modules, macros, and javascript in general. Special thanks this time goes out to user vance, whose model macros (https://github.com/VanceCole/macros) have proven invaluable.
