@@ -6,6 +6,11 @@ if (!token) {
   return;
 }
 
+if (canvas.tokens.controlled.length > 1) {
+  ui.notifications.error("Please select only one token.")
+  return;
+}
+
 let locks = {
   poor: {DC: 15, successes: 2},
   simple: {DC: 20, successes: 3},
@@ -51,7 +56,8 @@ let dialog = new Dialog({
                   operation: 'playerLockpick',
                   actor,
                   neededSuccesses: locks[lock].successes,
-                  DC: locks[lock].DC 
+                  DC: locks[lock].DC, 
+                  mod: actor.data.data.skills.thi.value
               });
           }
       }
@@ -76,7 +82,8 @@ let customLock = new Dialog({
               operation: 'playerLockpick',
               actor,
               neededSuccesses,
-              DC
+              DC,
+              mod: actor.data.data.skills.thi.value
           });
       }
     },

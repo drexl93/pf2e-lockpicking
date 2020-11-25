@@ -13,7 +13,7 @@
 //
 // You can hover over the result rolled to see what the modifiers were.
 
-export function lockpick(targetSuccesses, targetDC, actor) {
+export function lockpick(targetSuccesses, targetDC, actor, mod) {
     let successes = 0;
     let attempts = 0;
     let critfail = false;
@@ -25,11 +25,11 @@ export function lockpick(targetSuccesses, targetDC, actor) {
     runDialog();
 
     // if autopick is checked, keep going until success or critical failure
-    async function fastMode(targetSuccesses, targetDC, actor, bonuses) {
+    async function fastMode(targetSuccesses, targetDC, actor, mod, bonuses) {
         let rollResArr = []
         while (successes < targetSuccesses) {
             attempts++
-            let rollRes = new Roll("1d20 + @thi + @mod", {thi: actor.data.skills.thi.totalModifier, mod: bonuses} ).roll()
+            let rollRes = new Roll("1d20 + @mod + @bonuses", {mod, bonuses} ).roll()
             let resultString = "";
             for (let i=0; i<rollRes.results.length ; i++) {
                 resultString += `${rollRes.results[i]}`
@@ -82,9 +82,9 @@ export function lockpick(targetSuccesses, targetDC, actor) {
     }
 
     // if autopick is not checked, go one roll at a time
-    async function normalMode(targetSuccesses, targetDC, actor, bonuses) {
+    async function normalMode(targetSuccesses, targetDC, actor, mod, bonuses) {
         attempts++
-        let rollRes = new Roll("1d20 + @thi + @mod", {thi: actor.data.skills.thi.totalModifier, mod: bonuses} ).roll()
+        let rollRes = new Roll("1d20 + @mod + @bonuses", {mod, bonuses} ).roll()
         let resultString = "";
         for (let i=0; i<rollRes.results.length ; i++) {
             resultString += `${rollRes.results[i]}`
@@ -166,9 +166,9 @@ export function lockpick(targetSuccesses, targetDC, actor) {
                 callback: (html) => {
                     let bonuses = parseInt(html.find("#bonuses")[0].value)
                     if (html.find("#fastmode")[0].checked) {
-                        fastMode(targetSuccesses, targetDC, actor, bonuses)
+                        fastMode(targetSuccesses, targetDC, actor, mod, bonuses)
                     } else {
-                        normalMode(targetSuccesses, targetDC, actor, bonuses)
+                        normalMode(targetSuccesses, targetDC, actor, mod, bonuses)
                     }   
                 }
               },
