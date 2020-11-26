@@ -1,82 +1,66 @@
-#pf2e-rsc-scripts-content {
+#pf2e-lockpicking-scripts-content {
     padding: 5px; 
     margin: auto; 
     width: 95%;
 }
 
-#pf2e-rsc-chooseskill {
-    padding: 8px 0px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 60%;
-}
-
-#pf2e-rsc-preset {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-    text-align: center;
-}
-
-#pf2e-rsc-customDC {
+#customDC {
     width: 30px
 }
 
-#pf2e-rsc-successes {
+#successes {
     width: 30px
 }
 
-#pf2e-rsc-bonuses {
+#bonuses {
     width: 30px
 }
 
-#pf2e-rsc-gm_lockset-content2 {
+#pf2e-lockpicking-gm_lockset-content2 {
     text-align: center
 }
 
-.pf2e-rsc-scripts-numbercritsuccess {
+.pf2e-lockpicking-scripts-numbercritsuccess {
     color: green; 
     text-decoration: underline
 }
 
-.pf2e-rsc-scripts-numbercritfail {
+.pf2e-lockpicking-scripts-numbercritfail {
     color: red;
     text-decoration: underline
 }
 
-.pf2e-rsc-scripts-numbersuccess {
+.pf2e-lockpicking-scripts-numbersuccess {
     color: green; 
 }
 
-.pf2e-rsc-scripts-wordfail {
+.pf2e-lockpicking-scripts-wordfail {
     font-weight: bold;
 }
 
-.pf2e-rsc-scripts-wordsuccess {
+.pf2e-lockpicking-scripts-wordsuccess {
     color: green; 
     font-weight: bold
 }
 
-.pf2e-rsc-scripts-wordcritsuccess {
+.pf2e-lockpicking-scripts-wordcritsuccess {
     color: green; 
     font-weight: bold; 
     text-decoration: underline
 }
 
-.pf2e-rsc-scripts-wordcritfail {
+.pf2e-lockpicking-scripts-wordcritfail {
     color: red; 
     font-weight: bold;
     text-decoration: underline
 }
 
-.pf2e-rsc-tooltip {
+.pf2e-lockpicking-tooltip {
     display: inline-block;
     position: relative;
 }
 
-.pf2e-rsc-tooltip .pf2e-rsc-tooltiptext {
+.pf2e-lockpicking-tooltip .pf2e-lockpicking-tooltiptext {
     visibility: hidden;
     position: absolute;
     background-image: url("/ui/parchment.jpg");
@@ -95,6 +79,6 @@
     text-decoration: none;
 }
 
-.pf2e-rsc-tooltip:hover .pf2e-rsc-tooltiptext {
+.pf2e-lockpicking-tooltip:hover .pf2e-lockpicking-tooltiptext {
     visibility: visible;
 }
