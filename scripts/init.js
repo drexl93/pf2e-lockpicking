@@ -1,12 +1,12 @@
-// Set up socket listener to listen for gm_lockset macro
+// Set up socket listener to listen for gm_skillset macro
 
 Hooks.once("ready", () => {
-    game.socket.on('module.pf2e-lockpicking', (data) => {
-        if (data.operation === 'playerLockpick') {
+    game.socket.on('module.pf2e-rsc', (data) => {
+        if (data.operation === 'playerSkillChallenge') {
             if (data.actor.permission[game.user._id] >= 3) {
-                lockpick(data.neededSuccesses, data.DC, data.actor, data.mod);
+                skillChallenge(data.neededSuccesses, data.DC, data.actor, data.mod);
             }
         }
     });
 })
-import { lockpick } from './scripts.js';
+import { skillChallenge } from './scripts.js';
